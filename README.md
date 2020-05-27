@@ -44,4 +44,7 @@ Attempt to recreate Cmder color scheme as close as possible on Windows Terminal.
 
 ```json
 "colorScheme": "Monokai Cmder"
+
+// optional - change default font to Consolas
+"fontFace": "Consolas"
 ```
