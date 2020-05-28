@@ -8,8 +8,13 @@ Attempt to recreate Cmder color scheme as close as possible on Windows Terminal.
 
 ## Installing
 
-1. Open Windows Terminal Settings
-2. Paste the following inside `schemes`
+All steps are optional and can be modified to your desire.
+
+Open Windows Terminal `settings.json` file from its menu
+
+### 1. Add Monokai Cmder color scheme
+
+Paste the following inside `schemes`
 
 ```json
 {
@@ -40,11 +45,40 @@ Attempt to recreate Cmder color scheme as close as possible on Windows Terminal.
 }
 ```
 
-3. Add the following to `profile > defaults`
+### 2. Set default Color Scheme and Font Face
+
+Paste the following inside `profiles > defaults`
 
 ```json
+// optional:  add this line if you want to use Monokai Cmder
+//            globally on all profiles
 "colorScheme": "Monokai Cmder"
 
-// optional - change default font to Consolas
+// optional:  add this line if you want to use Consolas
+//            globally on all profiles
 "fontFace": "Consolas"
+```
+
+### 3. Integrate Cmder into Windows Terminal
+
+Paste the following code as a item in `profiles > list`.
+You should have `%cmder_root%` environment variable set, or just modify the code bellow accordingly.
+
+```json
+{
+  "guid": "{d41ee793-1255-4694-b5a6-1f69bd94dc09}",
+  "name": "Cmder",
+  "commandline": "cmd.exe /k %cmder_root%/vendor/init.bat",
+  "icon": " %cmder_root%/icons/cmder.ico",
+  "hidden": false,
+  "colorScheme": "Monokai Cmder"
+}
+```
+
+### 4. Set Cmder as default profile
+
+Change `defaultProfile` to `{d41ee793-1255-4694-b5a6-1f69bd94dc09}`.
+
+```json
+"defaultProfile": "{d41ee793-1255-4694-b5a6-1f69bd94dc09}",
 ```
