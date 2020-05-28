@@ -71,7 +71,8 @@ You should have `%cmder_root%` environment variable set, or just modify the code
   "commandline": "cmd.exe /k %cmder_root%/vendor/init.bat",
   "icon": " %cmder_root%/icons/cmder.ico",
   "hidden": false,
-  "colorScheme": "Monokai Cmder"
+  "colorScheme": "Monokai Cmder",
+  "fontFace": "Consolas"
 }
 ```
 
